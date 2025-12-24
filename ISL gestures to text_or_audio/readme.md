@@ -82,12 +82,3 @@ Gesture samples are collected using a webcam and stored in a CSV file containing
 - Listen to the gesture output using speech synthesis (if enabled)  
 
 ---
-
-## Applications
-
-- Assistive communication systems for the deaf and hard-of-hearing  
-- Educational tools for learning Indian Sign Language  
-- Human–computer interaction systems  
-- Accessibility solutions for public and digital services  
-
----
