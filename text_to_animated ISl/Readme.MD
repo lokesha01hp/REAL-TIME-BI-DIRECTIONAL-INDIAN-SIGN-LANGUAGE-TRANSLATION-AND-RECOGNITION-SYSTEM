@@ -42,7 +42,7 @@ Text_Audio_to_ISL/
 │ ├── cover.html # Home page
 │ ├── text_to_isl.html # Text/Audio to ISL interface
 │ └── about.html
-└── ISL_VIDEOS/ # Pre-generated animated ISL gesture videos
+└── Animated_ISl_Videos/ # Pre-generated animated ISL gesture videos
 
 ---
 
