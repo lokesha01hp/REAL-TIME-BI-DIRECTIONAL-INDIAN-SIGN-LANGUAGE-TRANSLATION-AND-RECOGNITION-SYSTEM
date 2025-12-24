@@ -83,10 +83,8 @@ Text_Audio_to_ISL/
 pip install flask opencv-python av SpeechRecognition
 
 2️⃣ Run the Application
-```bash
 python app.py
 
 3️⃣ Open in Browser
-```bash
 http://localhost:5000
 ````
