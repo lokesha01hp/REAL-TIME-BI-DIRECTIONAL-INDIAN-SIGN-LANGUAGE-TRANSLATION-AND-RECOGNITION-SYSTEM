@@ -91,13 +91,3 @@ Gesture samples are collected using a webcam and stored in a CSV file containing
 - Accessibility solutions for public and digital services  
 
 ---
-
-## Future Enhancements
-
-- Expansion of the gesture dataset  
-- Continuous sentence-level gesture recognition  
-- Integration of facial expression analysis  
-- Improved robustness under varying lighting conditions  
-- Multilingual speech output support  
-
----
