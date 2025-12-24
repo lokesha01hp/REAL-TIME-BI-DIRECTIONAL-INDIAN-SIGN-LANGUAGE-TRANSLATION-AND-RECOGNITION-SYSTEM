@@ -29,7 +29,7 @@ WORD2VIDEO = {k: _abs(v) for k, v in ISL_INDEX.get("words", {}).items()}
 ALPHA2VIDEO = {k: _abs(v) for k, v in ISL_INDEX.get("alphabets", {}).items()}
 NUM2VIDEO = {k: _abs(v) for k, v in ISL_INDEX.get("numbers", {}).items()}
 
-GOOGLE_API_KEY = "AIzaSyAxNvj-2Ll0696bX8snJwsf1xjyjyHs760"
+GOOGLE_API_KEY = "USE_YOUR_API_KEY"
 
 def tokenize(text: str):
     return re.findall(r"[a-zA-Z0-9']+", text.lower())
