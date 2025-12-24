@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Hand Gesture Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f6f9;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        #video-container {
+            margin: 20px auto;
+            max-width: 1280px;
+            background: black;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        img {
+            width: 100%;
+        }
+        #gesture {
+            font-size: 2em;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #27ae60;
+        }
+        .info {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>🤟 Real-Time Hand Gesture Recognition</h1>
+
+<div id="video-container">
+    <img id="video" src="/video_feed">
+</div>
+
+<div class="info">
+    <div id="gesture">Waiting for camera...</div>
+</div>
+
+<script>
+    const gestureBox = document.getElementById("gesture");
+
+    let lastSpoken = "";
+    let lastSpeakTime = 0;
+    const SPEAK_GAP = 1200; // milliseconds
+
+    async function fetchLabel() {
+        const res = await fetch("/current_label");
+        const data = await res.json();
+        const label = data.label;
+
+        gestureBox.innerText = label;
+
+        // Ignore non-gesture states
+        if (
+            !("speechSynthesis" in window) ||
+            label === lastSpoken ||
+            label === "No hand detected" ||
+            label === "Waiting for hands..." ||
+            label === "Waiting for camera..."
+        ) {
+            return;
+        }
+
+        const now = Date.now();
+        if (now - lastSpeakTime < SPEAK_GAP) return;
+
+        // Speak
+        speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(label);
+        utter.rate = 0.95;
+        utter.pitch = 1.0;
+        utter.volume = 1.0;
+        speechSynthesis.speak(utter);
+
+        lastSpoken = label;
+        lastSpeakTime = now;
+    }
+
+    setInterval(fetchLabel, 500);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISL Bridge</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #f8f9fc;
+            font-family: "Segoe UI", system-ui, sans-serif;
+            overflow: hidden;
+            color: #1a1a1a;
+        }
+
+        canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .overlay {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            color: #5b4bdf;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 1.6rem;
+            max-width: 720px;
+            margin-bottom: 60px;
+            color: #444;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .btn {
+            padding: 18px 56px;
+            font-size: 1.4rem;
+            width: 420px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .text-btn {
+            background: #5b4bdf;
+            color: white;
+            box-shadow: 0 10px 30px rgba(91,75,223,0.3);
+        }
+
+        .video-btn {
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(91,75,223,0.35);
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="overlay">
+    <h1>ISL Bridge</h1>
+    <p>
+        Breaking communication barriers by translating text, speech,
+        and video into Indian Sign Language.
+    </p>
+
+    <div class="options">
+        <a href="/text_to_isl" class="btn text-btn">Text / Audio to ISL</a>
+        <a href="/video_to_isl" class="btn video-btn">Video to ISL</a>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = innerWidth * dpr;
+        canvas.height = innerHeight * dpr;
+        canvas.style.width = innerWidth + "px";
+        canvas.style.height = innerHeight + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+
+    let time = 0;
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        const grid = 40;
+
+        for (let x = 0; x <= innerWidth; x += grid) {
+            for (let y = 0; y <= innerHeight; y += grid) {
+
+                const n =
+                    Math.sin(x * 0.015 + time) +
+                    Math.cos(y * 0.015 + time);
+
+                const radius = 35 + n * 12;
+
+                const gradient = ctx.createRadialGradient(
+                    x, y, 0,
+                    x, y, radius
+                );
+
+                gradient.addColorStop(0, "rgba(91,75,223,0.18)");
+                gradient.addColorStop(1, "rgba(91,75,223,0)");
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        time += 0.015;
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+</script>
+
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISL Bridge</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #f6f8fc;
+            font-family: "Segoe UI", system-ui, sans-serif;
+            overflow: hidden;
+            color: #1a1a1a;
+        }
+
+        canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .overlay {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+        }
+
+        h1 {
+            font-size: 4.8rem;
+            margin-bottom: 20px;
+            color: #4f46e5;
+            letter-spacing: -1px;
+        }
+
+        p {
+            font-size: 1.6rem;
+            max-width: 760px;
+            margin-bottom: 60px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .btn {
+            padding: 18px 56px;
+            font-size: 1.4rem;
+            width: 440px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .text-btn {
+            background: #4f46e5;
+            color: white;
+            box-shadow: 0 12px 32px rgba(79,70,229,0.28);
+        }
+
+        .video-btn {
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(79,70,229,0.35);
+        }
+    </style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="overlay">
+    <h1>ISL Bridge</h1>
+    <p>
+        Bridging communication gaps by translating text, speech,
+        and video into Indian Sign Language.
+    </p>
+
+    <div class="options">
+        <a href="/text_to_isl" class="btn text-btn">Text / Audio to ISL</a>
+        <a href="/video_to_isl" class="btn video-btn">Video to ISL</a>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = innerWidth * dpr;
+        canvas.height = innerHeight * dpr;
+        canvas.style.width = innerWidth + "px";
+        canvas.style.height = innerHeight + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    resize();
+    window.addEventListener("resize", resize);
+
+    const streams = [];
+    const STREAM_COUNT = 60;
+
+    for (let i = 0; i < STREAM_COUNT; i++) {
+        streams.push({
+            x: Math.random() * innerWidth,
+            y: Math.random() * innerHeight,
+            speed: 0.6 + Math.random() * 1.2,
+            length: 12 + Math.random() * 18,
+            angle: Math.random() * Math.PI * 2,
+            phase: Math.random() * Math.PI * 2
+        });
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        streams.forEach(s => {
+            s.phase += 0.03;
+
+            const dx = Math.cos(s.angle) * s.speed;
+            const dy = Math.sin(s.angle) * s.speed;
+
+            s.x += dx;
+            s.y += dy;
+
+            if (
+                s.x < -50 || s.x > innerWidth + 50 ||
+                s.y < -50 || s.y > innerHeight + 50
+            ) {
+                s.x = Math.random() * innerWidth;
+                s.y = Math.random() * innerHeight;
+                s.angle = Math.random() * Math.PI * 2;
+            }
+
+            for (let i = 0; i < s.length; i++) {
+                const px = s.x - dx * i * 4;
+                const py = s.y - dy * i * 4;
+                const alpha = 1 - i / s.length;
+
+                ctx.beginPath();
+                ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(79,70,229,${alpha * 0.6})`;
+                ctx.fill();
+            }
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+</script>
+
+</body>
+</html> -->
