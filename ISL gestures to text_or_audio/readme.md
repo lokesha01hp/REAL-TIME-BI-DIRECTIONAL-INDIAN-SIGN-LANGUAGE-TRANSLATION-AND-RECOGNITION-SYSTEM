@@ -24,7 +24,7 @@ The application captures live video input from a webcam and processes Indian Sig
 
 ## Technology Stack
 
-- Python  
+- Python (3.10)  
 - Flask  
 - MediaPipe  
 - OpenCV  
@@ -60,7 +60,7 @@ ISL_to_Text_Audio/
 │ └── index.html
 ├── main_app.py
 ├── train_model.py
-└── README.md
+└── readme.md
 
 yaml
 Copy code
