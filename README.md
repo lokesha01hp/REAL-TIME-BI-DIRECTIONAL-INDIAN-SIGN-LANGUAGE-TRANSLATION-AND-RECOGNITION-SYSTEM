@@ -62,7 +62,7 @@ Server URL:http://localhost:5000
 ## 📚 Publication Details
 
 - **Title:** Real-Time Bi-Directional Indian Sign Language Translator and Recognition System  
-- **Journal:** International Research Journal of Modernization in Engineering, Technology and Science (IRJMETS)  
+- **Journal:** International Research Journal of Modernisation in Engineering, Technology and Science (IRJMETS)  
 - **Year:** 2025  
 - **Format:** PDF  
 
