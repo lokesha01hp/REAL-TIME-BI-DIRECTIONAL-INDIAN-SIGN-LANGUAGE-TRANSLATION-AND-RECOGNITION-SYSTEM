@@ -31,7 +31,7 @@ Recognises Indian Sign Language gestures from a live webcam feed and converts th
 
 ## Prerequisites
 
-- Python **3.10**
+- Python **3.10 or 3.11**
 - Webcam (for gesture recognition)
 - Google Chrome / Edge (recommended)
 
