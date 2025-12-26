@@ -56,7 +56,7 @@ Terminal 2
 ```bash
 cd ISL_to_Text_Audio
 python main_app.py
-Server URL:http://localhost:5000
+Server URL:http://localhost:9999
 ```
 ---
 ## 📚 Publication Details
