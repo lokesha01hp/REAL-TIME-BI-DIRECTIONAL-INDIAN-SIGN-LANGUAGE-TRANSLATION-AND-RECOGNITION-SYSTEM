@@ -67,3 +67,11 @@ Server URL:http://localhost:5000
 - **Format:** PDF  
 
 📄 **[View Paper](ISL_BiDirectional_Paper.pdf)**
+---
+## Credits
+
+This project was developed collaboratively with the following team members:
+
+**Contributors:**
+- **M S Nischith Gowda** — [GitHub](https://github.com/msnischith)
+- **C A Amogh Jain** — [GitHub](https://github.com/Amogh-003)
