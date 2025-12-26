@@ -5,7 +5,7 @@ This project implements a **real-time bi-directional Indian Sign Language (ISL) 
 - **Text / Audio → ISL animated video translation**
 - **ISL gestures → Text and Audio recognition**
 
-By combining computer vision, machine learning, and web technologies, the system provides an accessible and efficient solution for inclusive communication.
+By combining computer vision, machine learning, and web technologies, the system offers a user-friendly and efficient solution for inclusive communication.
 
 ---
 
