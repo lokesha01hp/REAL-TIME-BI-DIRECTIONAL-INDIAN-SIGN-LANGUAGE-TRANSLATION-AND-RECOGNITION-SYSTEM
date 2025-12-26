@@ -58,3 +58,12 @@ cd ISL_to_Text_Audio
 python main_app.py
 Server URL:http://localhost:5000
 ```
+---
+## 📚 Publication Details
+
+- **Title:** Real-Time Bi-Directional Indian Sign Language Translator and Recognition System  
+- **Journal:** International Research Journal of Modernization in Engineering, Technology and Science (IRJMETS)  
+- **Year:** 2025  
+- **Format:** PDF  
+
+📄 **[View Paper](paper/ISL_BiDirectional_Translation_Paper.pdf)**
