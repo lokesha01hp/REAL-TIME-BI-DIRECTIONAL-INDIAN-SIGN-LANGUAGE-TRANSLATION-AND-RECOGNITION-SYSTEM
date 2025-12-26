@@ -29,3 +29,32 @@ Recognises Indian Sign Language gestures from a live webcam feed and converts th
 
 ---
 
+## Prerequisites
+
+- Python **3.10**
+- Webcam (for gesture recognition)
+- Google Chrome / Edge (recommended)
+
+---
+
+## Step 1: Install Dependencies
+
+```bash
+pip install flask opencv-python mediapipe tensorflow scikit-learn numpy pandas
+```
+
+### Running Mode 1: Text / Audio → ISL Animated Video
+Terminal 1
+```bash
+cd Text_Audio_to_ISL
+python app.py
+Server URL:http://localhost:5000
+```
+
+### Running Mode 2: ISL Gesture → Text / Audio
+Terminal 2
+```bash
+cd ISL_to_Text_Audio
+python main_app.py
+Server URL:http://localhost:5000
+```
