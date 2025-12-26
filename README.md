@@ -66,4 +66,4 @@ Server URL:http://localhost:5000
 - **Year:** 2025  
 - **Format:** PDF  
 
-📄 **[View Paper](paper/ISL_BiDirectional_Translation_Paper.pdf)**
+📄 **[View Paper](ISL_BiDirectional_Paper.pdf)**
