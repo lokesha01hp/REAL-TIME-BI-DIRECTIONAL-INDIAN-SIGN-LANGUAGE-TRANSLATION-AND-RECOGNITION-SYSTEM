@@ -75,3 +75,4 @@ This project was developed collaboratively with the following team members:
 **Contributors:**
 - **M S Nischith Gowda** — [GitHub](https://github.com/msnischith)
 - **C A Amogh Jain** — [GitHub](https://github.com/Amogh-003)
+- **Jeevan Kumar E** — [GitHub](https://www.linkedin.com/in/jeevan-kumar-023528302/)
