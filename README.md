@@ -66,7 +66,7 @@ Server URL:http://localhost:9999
 - **Year:** 2025  
 - **Format:** PDF  
 
-📄 **[View Paper](ISL_BiDirectional_Paper.pdf)**
+📄 **[View Published Paper](ISL_BiDirectional_Paper.pdf)**
 ---
 ## Credits
 
