@@ -59,7 +59,7 @@ python main_app.py
 Server URL:http://localhost:9999
 ```
 ---
-## 📚 Publication Details
+## Publication Details
 
 - **Title:** Real-Time Bi-Directional Indian Sign Language Translator and Recognition System  
 - **Journal:** International Research Journal of Modernisation in Engineering, Technology and Science (IRJMETS)  
